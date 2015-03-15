@@ -1,7 +1,7 @@
 WordPress getUser and XMLRPC BruteForce PoC
 ===========
 
-This script is an modification from [El3ct71k's](https://github.com/El3ct71k) [WordPress XMLRPC BruteForce PoC](https://github.com/El3ct71k/WordPress-XMLRPC-BruteForce-PoC)
+This script is a modification from [El3ct71k's](https://github.com/El3ct71k) [WordPress XMLRPC BruteForce PoC](https://github.com/El3ct71k/WordPress-XMLRPC-BruteForce-PoC)
 > This PoC script relies of a vulnerability in WordPress systems been available from version 3.5 to version 4.0 (included) that allow a brute force attacks through xmlrpc.php file A malicious attacker might to hack a WordPress users using this vulnerability. And use the TALSOFT-2011-0526 vulnerability to get potential authors over the author.php for the BruteForce.
 
 
