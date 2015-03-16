@@ -14,8 +14,8 @@ changes: (11.03.2015): bugfix EOL in the user and pass var
 
 ***/
 error_reporting(E_ALL);
-require("class-IXR.php");
-require("grab-page.php");
+require("./inc/class-IXR.php");
+require("./inc/grab-page.php");
 
 class XMLRPC_WP {
 	function __construct($site, $users_file, $passwords_file) {
