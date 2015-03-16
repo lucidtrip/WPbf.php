@@ -23,7 +23,7 @@ function grab_page($url, $ref_url = false, $data = false){
         curl_setopt($ch, CURLOPT_REFERER, $ref_url);
     }
     
-    if( true ) {
+    if( false ) {
         curl_setopt($ch, CURLOPT_PROXYTYPE, CURLPROXY_SOCKS5);
         curl_setopt($ch, CURLOPT_PROXY, "127.0.0.1:9150");
     }
