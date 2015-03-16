@@ -32,5 +32,7 @@ Why modification? I add the function "wp_getUsers" to better bruteforce users. A
 
 
 #### changes
+* 16.03.2015
+  * bugfix include
 * 11.03.2015
   * bugfix EOL in the user and pass var
