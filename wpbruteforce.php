@@ -64,13 +64,14 @@ class XMLRPC_WP {
 	}
 	function wp_getUsers() {
 	  $users = array();
+	  $users_len = array();
 	  for( $i=0; $i<=5; $i++ ) {
       $html = grab_page( $this->site . '/?author=' . $i, $this->site );
       if( $html[1]["http_code"] >= 200 && $html[1]["http_code"] < 400 ) {
         if( preg_match( "#<title>.*</title>#iU", $html[0], $match ) ) {
           $ue = $match[0];
           $ue = strip_tags( $ue );
-          $ue = preg_split( "#&[^\s]*;|-|\|,|›|\||»|,#", $ue );
+          $ue = preg_split( "#&[^\s]*;|-|\|,|›|\||»|,|\:|#", $ue );
           $ue = array_map( "trim", $ue );
           foreach( $ue as $k=>$v ) {
               if( $v == "" or $v == " " ) continue;
@@ -81,10 +82,26 @@ class XMLRPC_WP {
       }
     }
     $users = array_values(array_unique($users));
+    $users = $this->asort_by_len($users);
     //print_r( $users );
     echo "[+] Found " . count($users) . " usernames: " . implode (", ", $users) . PHP_EOL;
     return $users;
 	}
+	
+  function asort_by_len( $arr ) {
+    $array_len = array();
+    $array = array();
+    $return_array = array();
+    foreach( $arr as $v ) {
+      $array[] = $v;
+      $array_len[] = strlen( $v );
+    }
+    asort( $array_len );
+    foreach( $array_len as $k=>$v ) {
+      $return_array[] = $array[$k];
+    }
+    return $return_array;
+  }
 
   function dev_log($str) {
     $handler = fopen( "./dev.html", "w+" );
