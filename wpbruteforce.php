@@ -147,7 +147,7 @@ if(isset($argv[1]) && isset($argv[2]) && isset($argv[3])) {
 		echo("[-] URL Invalid!".PHP_EOL."Example URL: http(s)://example.com".PHP_EOL);
 		exit(0);		
 	}
-	$rpcbruteforce = new XMLRPC_WP($argv[1], $argv[2], $argv[3]);
+	$rpcbruteforce = new XMLRPC_WP(trim($argv[1]), $argv[2], $argv[3]);
 	$rpcbruteforce->bruteforce();
 } else {
 	echo("[~] USAGE: ". $argv[0]. " http://www.example.com/wp/ usernames.txt passwords.txt".PHP_EOL);
